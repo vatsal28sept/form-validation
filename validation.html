@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <form name="frm" onsubmit="return val1()">
+
+        Enter Your Name : <input type="text" name="txt1" id="txt1"><span id="f"></span>
+        <br><br>
+        Enter Your Mobile No : <input type="text" name="num" id="num">
+        <span id="o"></span>
+        <br><br> 
+        Gender : <input type="radio" name="gender" id="male"> Male
+                 <input type="radio" name="gender" id="female"> Female
+                 <span id="g"></span>
+                 <br><br>
+        Select Your Car Type : <input type="checkbox" name="type" id="sedan"> Sedan
+                          <input type="checkbox" name="type" id="suv"> SUV
+                          <input type="checkbox" name="type" id="hatchback"> Hatchback
+                          <span id="t"></span>
+                          <br><br>
+         Select Your Car : <select name="car" id="car">
+                            <option value="-1" selected>---Select Car---</option>
+                            <option value="amg">AMG</option>     
+                            <option value="defender">Defender</option>     
+                            <option value="lexus">Lexus</option>     
+                            <option value="tesla">Tesla</option>     
+                          </select>
+                          <span id="e"></span>
+                          <br><br> 
+        <input type="submit" value="Submit Data">
+    </form>
+    
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+</head>
+<body>
+    <form name="frm" onsubmit="return validateForm()">
+        Enter Your Name : <input type="text" name="txt" id="block"><p id="f"></p>
+        <br>
+        Enter Your Number : <input type="text" name="num" id=""><p id="o"></p>
+        <br>
+        Select Your Gender : <input type="radio" name="gender" id="m">Male
+                             <input type="radio" name="gender" id="fe">Female
+                             <p id="m-error"></p>
+                             <br>
+        Select Your Car Type : <input type="checkbox" name="che" id="c1">SUV
+                               <input type="checkbox" name="che" id="c2">Sedan
+                               <input type="checkbox" name="che" id="c3">Hatchback
+                               <p id="check"></p>
+                               <br>
+        Select Your Car : <select name="car" id="car">
+                                <option value="-1" selected>---Select Car---</option>
+                                <option value="amg">AMG</option>     
+                                <option value="defender">Defender</option>     
+                                <option value="lexus">Lexus</option>     
+                                <option value="tesla">Tesla</option>     
+                              </select>
+                              <p id="drop"></p>
+                              <br>
+        <input type="submit" value="Submit Data" id="btn">
+    </form>
+    <script>
+        function validateForm() {
+            var x = frm.txt.value;
+            var mno = frm.num.value;
+
+            document.getElementById("f").innerText = "";
+            document.getElementById("o").innerText = "";
+            document.getElementById("m-error").innerText = "";
+            document.getElementById("check").innerText = "";
+            document.getElementById("drop").innerText = "";
+
+            if (x === "" || x === null) {
+                document.getElementById("f").innerText = "*Enter Your Name";
+                document.getElementById("f").style.display = "inline-block";
+                return false;
+            }
+
+            if (mno === "") {
+                document.getElementById("o").innerText = "*Enter Your Number";
+                document.getElementById("o").style.display = "inline-block";
+                return false;
+            } else if (isNaN(mno)) {
+                document.getElementById("o").innerText = "*Enter Digits Only";
+                document.getElementById("o").style.display = "inline-block";
+                return false;
+            } else if (mno.length !== 10) {
+                document.getElementById("o").innerText = "*Mobile Number Must Have 10-Digits";
+                document.getElementById("o").style.display = "inline-block";
+                return false;
+            }
+
+            var genderChecked = document.querySelector('input[name="gender"]:checked');
+            if (!genderChecked) {
+                document.getElementById("m-error").innerText = "*Select Your Gender";
+                document.getElementById("m-error").style.display = "inline-block";
+                return false;
+            }
+
+            var carChecked = false;
+            var checkboxes = document.getElementsByName("che");
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    carChecked = true;
+                    break;
+                }
+            }
+
+            if (!carChecked) {
+                document.getElementById("check").innerText = "*Select Your Car Type";
+                document.getElementById("check").style.display = "inline-block";
+                return false;
+            }
+
+            var selectedCar = document.getElementById("car").value;
+            if (selectedCar === "-1") {
+                document.getElementById("drop").innerText = "*Select Your Car";
+                document.getElementById("drop").style.display = "inline-block";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html> -->
